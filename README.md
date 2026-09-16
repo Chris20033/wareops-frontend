@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WareOps Web
 
-## Getting Started
+Frontend de WareOps construido con Next.js, App Router y TypeScript estricto.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 24.x LTS
+- npm 11.6.1
+
+## Variable de entorno
+
+Copia `.env.example` como `.env.local`. La variable pública disponible es:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api/v1
+```
+
+No guardes secretos en variables prefijadas con `NEXT_PUBLIC_`.
+
+## Instalación
+
+```bash
+npm ci
+```
+
+## Desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). La ruta `/` muestra la comprobación técnica del frontend.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Comandos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando                | Propósito                                 |
+| ---------------------- | ----------------------------------------- |
+| `npm run dev`          | Inicia el servidor de desarrollo.         |
+| `npm run format`       | Formatea los archivos compatibles.        |
+| `npm run format:check` | Comprueba formato sin modificar archivos. |
+| `npm run lint`         | Ejecuta ESLint.                           |
+| `npm run test`         | Ejecuta Vitest en modo interactivo.       |
+| `npm run test:run`     | Ejecuta Vitest una sola vez.              |
+| `npm run build`        | Genera el build de producción.            |
+| `npm run start`        | Sirve un build previamente generado.      |
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app`: rutas, layouts y proveedores globales.
+- `src/features`: comportamiento organizado por módulo.
+- `src/components`: componentes de interfaz reutilizables.
+- `src/lib`: infraestructura compartida de API, autenticación y validación.
+- `src/stores`: estado cliente con Zustand.
+- `src/test`: configuración compartida de pruebas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Problemas comunes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Si `npm ci` indica que el lockfile no coincide, confirma que usas npm 11.6.1 y no regeneres el lockfile con otra versión.
+- Si el puerto 3000 está ocupado, detén el proceso anterior o ejecuta `npm run dev -- --port 3002`.
+- Si la API usa otra URL, actualiza únicamente `NEXT_PUBLIC_API_BASE_URL` en `.env.local` y conserva la base `/api/v1`.
