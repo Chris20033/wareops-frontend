@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T20:42:00-06:00",
+  "title": "Design System: WareOps",
+  "extensions": {
+    "colorMeta": {
+      "carbon-ink": {
+        "role": "primary",
+        "displayName": "Carbon Ink",
+        "canonical": "#09090b",
+        "tonalRamp": [
+          "#09090b",
+          "#18181b",
+          "#27272a",
+          "#3f3f46",
+          "#52525b",
+          "#71717a",
+          "#a1a1aa",
+          "#e4e4e7"
+        ]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#52525b",
+          "#71717a",
+          "#a1a1aa",
+          "#e4e4e7",
+          "#f4f4f5",
+          "#ffffff"
+        ]
+      },
+      "technical-stone": {
+        "role": "neutral",
+        "displayName": "Technical Stone",
+        "canonical": "#fafafa",
+        "tonalRamp": [
+          "#18181b",
+          "#27272a",
+          "#52525b",
+          "#71717a",
+          "#a1a1aa",
+          "#d4d4d8",
+          "#f4f4f5",
+          "#fafafa"
+        ]
+      },
+      "status-verified": {
+        "role": "secondary",
+        "displayName": "Status Verified",
+        "canonical": "#047857",
+        "tonalRamp": [
+          "#064e3b",
+          "#065f46",
+          "#047857",
+          "#059669",
+          "#10b981",
+          "#34d399",
+          "#a7f3d0",
+          "#ecfdf5"
+        ]
+      },
+      "status-reserved": {
+        "role": "secondary",
+        "displayName": "Status Reserved",
+        "canonical": "#b45309",
+        "tonalRamp": [
+          "#78350f",
+          "#92400e",
+          "#b45309",
+          "#d97706",
+          "#f59e0b",
+          "#fbbf24",
+          "#fde68a",
+          "#fffbeb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Main operational surface headline without kicker."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Primary section and dashboard view headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Structural panel and card titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Operational descriptions constrained to 60-68ch."
+      },
+      "label": {
+        "displayName": "Label / Tabular Mono",
+        "purpose": "SKUs, warehouse bin locations, HTTP headers, RBAC permission codes, and stock quantities."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease- crisp",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Immediate state feedback on controls and ledger row updates."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-contrast carbon action button with tactile active press.",
+      "html": "<button class=\"ds-btn-primary\">Crear organización</button>",
+      "css": ".ds-btn-primary { background: #09090b; color: #ffffff; border: 1px solid #09090b; border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background-color 150ms ease, transform 100ms ease; } .ds-btn-primary:hover { background: #27272a; } .ds-btn-primary:active { transform: scale(0.985); } .ds-btn-primary:focus-visible { outline: 2px solid #09090b; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Crisp 1px structural action button for secondary workflows.",
+      "html": "<button class=\"ds-btn-outline\">Reservar 5</button>",
+      "css": ".ds-btn-outline { background: #ffffff; color: #09090b; border: 1px solid #d4d4d8; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 500; cursor: pointer; transition: background-color 150ms ease, border-color 150ms ease; } .ds-btn-outline:hover { background: #f4f4f5; border-color: #a1a1aa; } .ds-btn-outline:focus-visible { outline: 2px solid #09090b; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Industrial form field with solid focus ring and WCAG AA placeholder.",
+      "html": "<input class=\"ds-input\" placeholder=\"SKU-VAL-4020\" />",
+      "css": ".ds-input { height: 36px; padding: 4px 12px; border: 1px solid #d4d4d8; border-radius: 6px; background: #ffffff; color: #09090b; font-size: 14px; outline: none; transition: border-color 150ms ease, box-shadow 150ms ease; } .ds-input::placeholder { color: #71717a; } .ds-input:focus { border-color: #09090b; box-shadow: 0 0 0 1px #09090b; }"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "chip-status",
+      "description": "Compact rectangular badge for operational states and roles.",
+      "html": "<span class=\"ds-chip\">Frontend activo</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid #d4d4d8; border-radius: 4px; background: #ffffff; color: #18181b; font-size: 11px; font-weight: 500; }"
+    },
+    {
+      "name": "Structural Card",
+      "kind": "card",
+      "refersTo": "card-structural",
+      "description": "Flat 1px-bordered operational container with zero drop shadow.",
+      "html": "<div class=\"ds-card\"><h3>Garantías operativas</h3><p>Físico = Reservado + Disponible</p></div>",
+      "css": ".ds-card { background: #ffffff; color: #09090b; border: 1px solid #e4e4e7; border-radius: 8px; padding: 20px; } .ds-card h3 { margin: 0 0 6px 0; font-size: 15px; font-weight: 600; } .ds-card p { margin: 0; font-size: 13px; color: #52525b; font-family: monospace; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Industrial Ledger & Dispatch Manifest",
+    "overview": "WareOps se diseña como un instrumento de precisión logística y contable. Cada superficie prioriza la lectura inmediata de existencias (Físico = Reservado + Disponible), códigos SKU, ubicaciones de pasillo/rack, cabeceras de aislamiento (X-Organization-Id) y autorizaciones por rol. La interfaz rechaza cualquier adorno superfluo en favor de paneles sólidos de alto contraste, líneas divisorias arquitectónicas de 1px y tipografía con métricas tabulares verificables.",
+    "keyCharacteristics": [
+      "Superficies sólidas sin degradados: contraste directo entre papel blanco (#ffffff), piedra técnica (#fafafa) y carbón (#09090b).",
+      "Estructura gobernada por bordes continuos de 1px (#e4e4e7) y tablas de libro mayor en lugar de mosaicos de tarjetas iguales.",
+      "Uso estricto de fuente monoespaciada (Geist Mono con tabular-nums) únicamente para SKUs, cantidades, tokens, cabeceras HTTP y códigos de permiso.",
+      "Estados operativos explícitos para reservas atómicas, alertas de stock mínimo y bloqueos por rol RBAC."
+    ],
+    "rules": [
+      {
+        "name": "The Zero-Gradient Rule",
+        "body": "Ninguna superficie, botón, insignia, borde o texto puede utilizar linear-gradient ni radial-gradient. Toda jerarquía se construye con bloques de color sólido y contraste tipográfico.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "Ningún encabezado (h1, h2, h3) lleva una etiqueta en mayúsculas o eyebrow encima. El titular carga con su propio peso jerárquico.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single-Declaration Depth Rule",
+        "body": "La elevación de un contenedor se declara mediante su borde de 1px y su contraste de superficie, nunca combinando un borde de 1px con una sombra flotante difusa.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do mantener una relación de contraste mínima de 4.5:1 en todo texto secundario y placeholder usando #52525b o #71717a sobre fondos claros y #d4d4d8 sobre #09090b.",
+      "Do alinear todas las cantidades de inventario (Físico, Reservado, Disponible) a la derecha con font-mono y tabular-nums.",
+      "Do reflejar siempre el estado de los permisos RBAC en los controles operativos."
+    ],
+    "donts": [
+      "Don't usar degradados de color (linear-gradient, radial-gradient) en fondos, botones, bordes o textos.",
+      "Don't colocar kickers o etiquetas en mayúsculas encima de los encabezados h1, h2 o h3.",
+      "Don't anidar tarjetas dentro de tarjetas ni usar bordes laterales gruesos (border-left > 1px) en alertas o llamadas."
+    ]
+  }
+}

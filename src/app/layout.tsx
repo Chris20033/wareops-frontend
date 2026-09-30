@@ -7,8 +7,9 @@ import { Providers } from "@/app/providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "WareOps",
-  description: "Fundación técnica del frontend de WareOps.",
+  title: "WareOps — Control Operativo de Inventario y Almacenes Multi-tenant",
+  description:
+    "Plataforma de operaciones de almacén con consistencia transaccional de existencias, transferencias atómicas e identidad multi-tenant con RBAC.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
