@@ -103,6 +103,49 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 Mi perfil
               </Link>
 
+              <PermissionGate permission="catalog:read">
+                <Link
+                  href="/branches"
+                  className={`rounded px-2.5 py-1 font-medium transition-colors ${
+                    pathname?.startsWith("/branches")
+                      ? "bg-neutral-900 text-white"
+                      : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950"
+                  }`}
+                >
+                  Sucursales
+                </Link>
+                <Link
+                  href="/warehouses"
+                  className={`rounded px-2.5 py-1 font-medium transition-colors ${
+                    pathname?.startsWith("/warehouses")
+                      ? "bg-neutral-900 text-white"
+                      : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950"
+                  }`}
+                >
+                  Almacenes
+                </Link>
+                <Link
+                  href="/products"
+                  className={`rounded px-2.5 py-1 font-medium transition-colors ${
+                    pathname?.startsWith("/products")
+                      ? "bg-neutral-900 text-white"
+                      : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950"
+                  }`}
+                >
+                  Productos
+                </Link>
+                <Link
+                  href="/suppliers"
+                  className={`rounded px-2.5 py-1 font-medium transition-colors ${
+                    pathname?.startsWith("/suppliers")
+                      ? "bg-neutral-900 text-white"
+                      : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950"
+                  }`}
+                >
+                  Proveedores
+                </Link>
+              </PermissionGate>
+
               <PermissionGate permission="member:manage">
                 <Link
                   href="/members"
@@ -112,7 +155,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                       : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950"
                   }`}
                 >
-                  Miembros e invitaciones
+                  Miembros
                 </Link>
               </PermissionGate>
             </nav>
